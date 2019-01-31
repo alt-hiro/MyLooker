@@ -59,8 +59,19 @@ view: sample_en {
     sql: ${TABLE}."PRODUCT_ID" ;;
   }
 
+  dimension: product_id_only {
+    type: string
+    sql: right(${TABLE}."PRODUCT_ID",8) ;;
+  }
+
+  dimension: product_id_digit4 {
+    type: string
+    sql: left(right(${TABLE}."PRODUCT_ID",8),4) ;;
+  }
+
   dimension: produtct_name {
     type: string
+
     sql: ${TABLE}."PRODUTCT_NAME" ;;
   }
 
