@@ -11,5 +11,6 @@ datagroup: sccbiteams_default_datagroup {
 persist_with: sccbiteams_default_datagroup
 
 explore: MySample {
+  label: " ほげ"
   view_name: sample_en
 }
