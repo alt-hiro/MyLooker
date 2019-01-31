@@ -143,7 +143,8 @@ view: sample_en {
 
   measure: sales {
     type: sum
-    sql: ${TABLE}."SALES" ;;
+    sql: ${TABLE}."SALES";;
+    drill_fields: [mydrill*]
   }
 
   measure: profit {
@@ -159,7 +160,9 @@ view: sample_en {
 ## ##############################################################
 ## Drill Section
 ##
-
+  set: mydrill{
+    fields: [order_id, order_date, sales]
+  }
 
 
 }
