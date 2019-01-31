@@ -1,6 +1,11 @@
 view: sample_en {
   sql_table_name: public.sample_en ;;
 
+
+## ##############################################################
+## Dimension Section
+##
+
   dimension: city {
     type: string
     sql: ${TABLE}."CITY" ;;
@@ -9,7 +14,8 @@ view: sample_en {
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}."COUNTRY";;
+    sql: ${TABLE}."COUNTRY"
+    drill_fields: [city];;
   }
 
   dimension: customer_category {
@@ -32,20 +38,6 @@ view: sample_en {
     sql: ${TABLE}."DISCOUNT_RATE" ;;
   }
 
-  dimension_group: order {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}."ORDER_DATE";;
-  }
 
   dimension: order_id {
     type: string
@@ -77,15 +69,6 @@ view: sample_en {
     sql: ${TABLE}."PRODUTCT_SUBCATEGORY" ;;
   }
 
-  dimension: profit {
-    type: number
-    sql: ${TABLE}."PROFIT" ;;
-  }
-
-  dimension: quantity {
-    type: number
-    sql: ${TABLE}."QUANTITY" ;;
-  }
 
   dimension: region {
     type: string
@@ -97,11 +80,17 @@ view: sample_en {
     sql: ${TABLE}."ROW_ID" ;;
   }
 
-  dimension: sales {
-    type: number
-    sql: ${TABLE}."SALES" ;;
+
+
+  dimension: ship_mode {
+    type: string
+    sql: ${TABLE}."SHIP_MODE" ;;
   }
 
+
+## ##############################################################
+## Date Section
+##
   dimension_group: ship {
     type: time
     timeframes: [
@@ -117,13 +106,49 @@ view: sample_en {
     sql: ${TABLE}."SHIP_DATE" ;;
   }
 
-  dimension: ship_mode {
-    type: string
-    sql: ${TABLE}."SHIP_MODE" ;;
+  dimension_group: order {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}."ORDER_DATE";;
   }
 
+
+## ##############################################################
+## Measure Section
+##
   measure: count {
     type: count
     drill_fields: [produtct_name, customer_name]
   }
+
+  measure: sales {
+    type: sum
+    sql: ${TABLE}."SALES" ;;
+  }
+
+  measure: profit {
+    type: sum
+    sql: ${TABLE}."PROFIT" ;;
+  }
+
+  measure: quantity {
+    type: sum
+    sql: ${TABLE}."QUANTITY" ;;
+  }
+
+## ##############################################################
+## Drill Section
+##
+
+
+
 }
