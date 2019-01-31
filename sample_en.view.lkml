@@ -3,7 +3,7 @@ view: sample_en {
 
   dimension: city {
     type: string
-    sql: ${TABLE}.CITY ;;
+    sql: ${TABLE}."CITY" ;;
   }
 
   dimension: country {
