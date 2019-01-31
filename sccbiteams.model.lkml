@@ -10,4 +10,6 @@ datagroup: sccbiteams_default_datagroup {
 
 persist_with: sccbiteams_default_datagroup
 
-explore: sample_en {}
+explore: MySample {
+  view_name: sample_en
+}
