@@ -1,5 +1,5 @@
 connection: "sccbi-rds"
-
+label: "たかのプロ"
 # include all the views
 include: "*.view"
 
