@@ -9,27 +9,27 @@ view: sample_en {
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.COUNTRY ;;
+    sql: ${TABLE}."COUNTRY";;
   }
 
   dimension: customer_category {
     type: string
-    sql: ${TABLE}.CUSTOMER_CATEGORY ;;
+    sql: ${TABLE}."CUSTOMER_CATEGORY" ;;
   }
 
   dimension: customer_id {
     type: string
-    sql: ${TABLE}.CUSTOMER_ID ;;
+    sql: ${TABLE}."CUSTOMER_ID" ;;
   }
 
   dimension: customer_name {
     type: string
-    sql: ${TABLE}.CUSTOMER_NAME ;;
+    sql: ${TABLE}."CUSTOMER_NAME" ;;
   }
 
   dimension: discount_rate {
     type: number
-    sql: ${TABLE}.DISCOUNT_RATE ;;
+    sql: ${TABLE}."DISCOUNT_RATE" ;;
   }
 
   dimension_group: order {
@@ -44,62 +44,62 @@ view: sample_en {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.ORDER_DATE ;;
+    sql: ${TABLE}."ORDER_DATE";;
   }
 
   dimension: order_id {
     type: string
-    sql: ${TABLE}.ORDER_ID ;;
+    sql: ${TABLE}."ORDER_ID" ;;
   }
 
   dimension: prefecture {
     type: string
-    sql: ${TABLE}.PREFECTURE ;;
+    sql: ${TABLE}."PREFECTURE" ;;
   }
 
   dimension: product_category {
     type: string
-    sql: ${TABLE}.PRODUCT_CATEGORY ;;
+    sql: ${TABLE}."PRODUCT_CATEGORY" ;;
   }
 
   dimension: product_id {
     type: string
-    sql: ${TABLE}.PRODUCT_ID ;;
+    sql: ${TABLE}."PRODUCT_ID" ;;
   }
 
   dimension: produtct_name {
     type: string
-    sql: ${TABLE}.PRODUTCT_NAME ;;
+    sql: ${TABLE}."PRODUTCT_NAME" ;;
   }
 
   dimension: produtct_subcategory {
     type: string
-    sql: ${TABLE}.PRODUTCT_SUBCATEGORY ;;
+    sql: ${TABLE}."PRODUTCT_SUBCATEGORY" ;;
   }
 
   dimension: profit {
     type: number
-    sql: ${TABLE}.PROFIT ;;
+    sql: ${TABLE}."PROFIT" ;;
   }
 
   dimension: quantity {
     type: number
-    sql: ${TABLE}.QUANTITY ;;
+    sql: ${TABLE}."QUANTITY" ;;
   }
 
   dimension: region {
     type: string
-    sql: ${TABLE}.REGION ;;
+    sql: ${TABLE}."REGION" ;;
   }
 
   dimension: row_id {
     type: string
-    sql: ${TABLE}.ROW_ID ;;
+    sql: ${TABLE}."ROW_ID" ;;
   }
 
   dimension: sales {
     type: number
-    sql: ${TABLE}.SALES ;;
+    sql: ${TABLE}."SALES" ;;
   }
 
   dimension_group: ship {
@@ -114,12 +114,12 @@ view: sample_en {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.SHIP_DATE ;;
+    sql: ${TABLE}."SHIP_DATE" ;;
   }
 
   dimension: ship_mode {
     type: string
-    sql: ${TABLE}.SHIP_MODE ;;
+    sql: ${TABLE}."SHIP_MODE" ;;
   }
 
   measure: count {
